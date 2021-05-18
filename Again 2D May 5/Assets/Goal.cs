@@ -16,17 +16,12 @@ public class Goal : MonoBehaviour
         {
             if (isPlayer1Goal)
             {
-            
                 GameObject.Find("GameManager").GetComponent<GameManager>().Player2Scored();
             }
-            else if(isPlayer2Goal)
+            else if (isPlayer2Goal)
             {
-             
                 GameObject.Find("GameManager").GetComponent<GameManager>().Player1Scored();
             }
-          
-           
         }
-
     }
-}  
+}

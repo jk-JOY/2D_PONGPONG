@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOverText;
 
+
     public void Player1Scored()
     {
         Player1Score++;
@@ -48,21 +50,21 @@ public class GameManager : MonoBehaviour
         Player1Paddle.GetComponent<Paddle>().Reset();
         Player2Paddle.GetComponent<Paddle>().Reset();
     }
+
     private void Update()
     {
-
         if (Player1Score >= 5)
-        {
-            gameOverText.SetActive(true);
-            Player1Win.gameObject.SetActive(true);
+        { 
             Destroy(this.gameObject);
+            Player1Win.gameObject.SetActive(true);
+    
         }
         else if (Player2Score >= 5)
         {
-            gameOverText.SetActive(true);
-            Player2Win.gameObject.SetActive(true);
             Destroy(this.gameObject);
+            Player2Win.gameObject.SetActive(true);
+            
         }
-
     }
+
 }
